@@ -5,7 +5,7 @@ env: # Environt variable to pass to all tasks
 
 task:
     name: StatixJob
-    timeout_in: 160m
+    timeout_in: 460m
     container:
       image: apon77/aosp:latest
       cpu: 16
