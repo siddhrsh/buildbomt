@@ -4,8 +4,7 @@ rm -rf .repo & # lets remove unnecessary things, so that no storage issue can oc
 
 # Normal build steps
 . build/envsetup.sh
-lunch lineage_miatoll-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
+lunch lighthouse_miatoll-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -18,13 +17,13 @@ up(){
 }
 
 make_metalava(){
-	mka api-stubs-docs
-	mka system-api-stubs-docs
-	mka test-api-stubs-docs
+	mka api-stubs-docs -j26
+	mka system-api-stubs-docs -j26
+	mka test-api-stubs-docs -j26
 }
 
 make_rom(){
-	make bacon -j20
+	make bacon -j26
 	zip=$(up out/target/product/miatoll/*zip)
 	echo " "
 	echo "$zip"
