@@ -4,7 +4,7 @@ rm -rf .repo & # lets remove unnecessary things, so that no storage issue can oc
 
 # Normal build steps
 . build/envsetup.sh
-lunch lighthouse_miatoll-userdebug
+lunch nad_violet-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -23,7 +23,7 @@ make_metalava(){
 }
 
 make_rom(){
-	make bacon -j20
+	mka nad -j20
 	zip=$(up out/target/product/miatoll/*zip)
 	echo " "
 	echo "$zip"
