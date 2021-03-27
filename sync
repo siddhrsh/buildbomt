@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt install wget
-MANIFEST=git://github.com/NusantaraProject-ROM/android_manifest.git
-BRANCH=11
+MANIFEST=git://github.com/NusantaraProject-ROM/android_manifest.git ##edit this
+BRANCH=11 ##edit this
 
 mkdir -p /tmp/rom
 cd /tmp/rom
@@ -12,15 +12,10 @@ git config --global user.name "Brucetech"
 git config --global user.email jashvakharia@gmail.com
 
 # Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j16
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 cd /tmp/rom
-pwd
-ls
 
+#delete lines below and replace with links of your device source
 git clone --depth=1 --single-branch https://github.com/NusantaraROM-Devices/device_xiaomi_violet.git -b 11 device/xiaomi/violet
 git clone --depth=1 --single-branch https://github.com/NusantaraROM-Devices/vendor_xiaomi_violet.git -b 11 vendor/xiaomi/violet
 git clone --depth=1 --single-branch https://github.com/NusantaraROM-Devices/android_kernel_xiaomi_violet.git kernel/xiaomi/violet --depth=1
-ls device/xiaomi/violet
-pwd
-cd /tmp/rom
-ls
