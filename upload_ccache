@@ -10,13 +10,13 @@ com ()
     tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz ccache
 }
 
-time com ccache-lighthouse 1 # Compression level 1, its enough
+time com ccache-example 1 # Compression level 1, its enough
 
 up(){
-	curl --upload-file $1 https://transfer.sh/
+	curl bashupload.com -T $1
 }
 
-up ccache-lighthouse.tar.gz
+up ccache-example.tar.gz
 
 # mkdir -p ~/.config/rclone
 # echo "$rclone_config" > ~/.config/rclone/rclone.conf # Write rclone config found from env variable, so that cloud storage can be used to upload ccache
