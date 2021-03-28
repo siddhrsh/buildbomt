@@ -1,10 +1,10 @@
 #!/bin/bash
 
-url=https://ghostmirror.hitesh920.workers.dev/gay12.tar.gz
+url=https://ghostmirror.hitesh920.workers.dev/gay13.tar.gz
 
 cd /tmp # Where to download cccahe
 time aria2c $url -x16 -s50
 echo "dl done"
-time tar xf gay12.tar.gz
+time tar xf gay13.tar.gz
 echo "unzip done"
-find gay12.tar.gz -delete
+find gay13.tar.gz -delete
