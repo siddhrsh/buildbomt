@@ -4,7 +4,7 @@ rm -rf .repo & # lets remove unnecessary things, so that no storage issue can oc
 
 # Normal build steps
 source build/envsetup.sh 
-lunch nad_RMX2151-userdebug  ##edit this
+lunch aosp_RMX2151-userdebug  ##edit this
 export CCACHE_DIR=/tmp/ccache ##set additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -23,7 +23,7 @@ make_metalava(){
 }
 
 make_rom(){
-	mka nad -j20
+	mka bacon -j20
 	zip=$(up out/target/product/RMX2151/*zip) ##edit this
 	echo " "
 	echo "$zip"
