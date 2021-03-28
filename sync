@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt install wget
-MANIFEST=git://github.com/NusantaraProject-ROM/android_manifest.git ##edit this
-BRANCH=11 ##edit this
+MANIFEST=https://github.com/PixelExtended/manifest.git ##edit this
+BRANCH=eleven ##edit this
 
 mkdir -p /tmp/rom
 cd /tmp/rom
