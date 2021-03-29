@@ -3,8 +3,8 @@ cd /tmp/rom # Depends on where source got synced
 rm -rf .repo & # lets remove unnecessary things, so that no storage issue can occur
 
 # Normal build steps
-source build/envsetup.sh 
-lunch aosp_RMX2151-userdebug  ##edit this
+. build/envsetup.sh 
+lunch havoc_RMX2151-userdebug  ##edit this
 export CCACHE_DIR=/tmp/ccache ##set additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
@@ -23,7 +23,7 @@ make_metalava(){
 }
 
 make_rom(){
-	mka bacon -j20
+	brunch -j20
 	zip=$(up out/target/product/RMX2151/*zip) ##edit this
 	echo " "
 	echo "$zip"
