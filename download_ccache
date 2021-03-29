@@ -1,10 +1,10 @@
 #!/bin/bash
 
-url=http://bashupload.com/g4VKh/z_DIj.gz
+url=https://ghostmirror.hitesh920.workers.dev/pero12.tar.gz
 
 cd /tmp # Where to download cccahe
 time aria2c $url -x16 -s50
 echo "dl done"
-time tar xf gay16.tar.gz
+time tar xf pero12.tar.gz
 echo "unzip done"
-find gay16.tar.gz -delete
+find pero12.tar.gz -delete
