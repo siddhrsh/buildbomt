@@ -1,11 +1,10 @@
 #!/bin/bash
-cd /tmp/rom # Depends on where source got synced
-rm -rf .repo & # lets remove unnecessary things, so that no storage issue can occur
+cd /tmp/rom
+rm -rf .repo &
 
-# Normal build steps
-. build/envsetup.sh 
-lunch havoc_RMX2151-userdebug  ##edit this
-export CCACHE_DIR=/tmp/ccache ##set additional flags if you need(optional)
+. build/envsetup.sh
+lunch aosp_RMX1941-userdebug ##edit this
+export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
 ccache -M 20G
@@ -17,17 +16,18 @@ up(){
 }
 
 make_metalava(){
-	mka api-stubs-docs -j20
-	mka system-api-stubs-docs -j20
-	mka test-api-stubs-docs -j20
+	mka api-stubs-docs
+	mka system-api-stubs-docs
+	mka test-api-stubs-docs
 }
 
 make_rom(){
-	brunch -j20
-	zip=$(up out/target/product/RMX2151/*zip) ##edit this
+	mka bacon -j16
+	zip=$(up out/target/product/RMX1941/*zip) ##edit this change from miatoll---> /<your device codename>
 	echo " "
 	echo "$zip"
 }
 
 make_metalava
-make_rom
+make_rom &
+sleep 4500 && kill "$!"
