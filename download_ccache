@@ -1,6 +1,6 @@
 #!/bin/bash
 
-url=https://ghostmirror.hitesh920.workers.dev/gay16.tar.gz
+url=http://bashupload.com/g4VKh/z_DIj.gz
 
 cd /tmp # Where to download cccahe
 time aria2c $url -x16 -s50
