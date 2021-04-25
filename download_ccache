@@ -1,10 +1,10 @@
 #!/bin/bash
 
-url=https://ghostmirror.hitesh920.workers.dev/0://vDfHu.gz
+url=https://ghostmirror.hitesh920.workers.dev/0://ASWHy.gz
 
 cd /tmp # Where to download cccahe
 time aria2c $url -x16 -s50
 echo "dl done"
-time tar xf vDfHu.gz
+time tar xf ASWHy.gz
 echo "unzip done"
-find vDfHu.gz -delete
+find ASWHy.gz -delete
