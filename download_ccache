@@ -1,6 +1,6 @@
 #!/bin/bash
 
-url=https://ghostmirror.hitesh920.workers.dev/pero12.tar.gz
+url=https://ghostmirror.hitesh920.workers.dev/0://vDfHu.gz
 
 cd /tmp # Where to download cccahe
 time aria2c $url -x16 -s50
